@@ -14,3 +14,9 @@ echo
 echo /
 echo /.
 echo /etc/
+source /opt/venv/bin/activate
+clear
+history -a
+clear
+history -a
+clear

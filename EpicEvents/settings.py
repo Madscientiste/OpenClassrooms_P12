@@ -47,10 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "authentication",
-    "management",
-    "sales",
-    "support",
+    "web",
 ]
 
 MIDDLEWARE = [
@@ -90,11 +87,11 @@ WSGI_APPLICATION = "EpicEvents.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("PSQL_NAME"),
-        "USER": os.environ.get("PSQL_USER"),
-        "PASSWORD": os.environ.get("PSQL_PASSWORD"),
-        "HOST": os.environ.get("PSQL_HOST"),
-        "PORT": os.environ.get("PSQL_PORT"),
+        "NAME": os.environ.get("PSQL_NAME", "django"),
+        "USER": os.environ.get("PSQL_USER", "postgres"),
+        "PASSWORD": os.environ.get("PSQL_PASSWORD", "postgres"),
+        "HOST": os.environ.get("PSQL_HOST", "localhost"),
+        "PORT": os.environ.get("PSQL_PORT", "5432"),
     }
 }
 
