@@ -1,0 +1,37 @@
+version: '3.7'
+services:
+  psql:
+    container_name: psql
+    image: postgres:14.2-alpine
+    restart: unless-stopped
+    hostname: psql_db
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    environment:
+      - POSTGRES_DB=EpicEvents
+      - POSTGRES_USER=psql_docker
+      - POSTGRES_PASSWORD=psql_docker
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.psql-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  api:
+    container_name: api
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    build: .
+    environment:
+      - PSQL_NAME=EpicEvents
+      - PSQL_USER=psql_docker
+      - PSQL_PASSWORD=psql_docker
+      - PSQL_HOST=psql_db
+      - PSQL_PORT=5432
+      - ALLOWED_HOSTS=127.0.0.1,localhost
