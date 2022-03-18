@@ -1,7 +1,8 @@
 from django.db import models
 
+
 class Client(models.Model):
-    user = models.OneToOneField("web.User", on_delete=models.CASCADE)
+    user = models.OneToOneField("authentification.UserModel", on_delete=models.CASCADE)
 
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)

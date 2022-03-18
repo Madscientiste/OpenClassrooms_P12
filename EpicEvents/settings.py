@@ -26,14 +26,13 @@ SECRET_KEY = "django-insecure--rin!ntj(n^u2gir0icfgeviz0))nlwf+0ig7s7$@cm!u9(b%%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-AUTH_USER_MODEL = "authentication.User"
+AUTH_USER_MODEL = "authentification.UserModel"
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ]
 }
 
@@ -46,8 +45,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Modules
     "rest_framework",
-    "web",
+    # Apps
+    "web.auth.apps.AuthConfig",
+    "web.client",
+    "web.contract",
+    "web.event",
+    "web.sales",
+    "web.support",
 ]
 
 MIDDLEWARE = [
@@ -129,18 +135,25 @@ USE_TZ = True
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "handlers": {
-        "file": {
-            "level": "INFO",
-            "class": "logging.FileHandler",
-            "filename": BASE_DIR / ".logs" / "logs.log",
-        },
+    "formatters": {
+        "verbose": {
+            "format": "{name} {levelname} {asctime} : {message}",
+            "style": "{",
+        }
     },
     "loggers": {
-        "django": {
-            "handlers": ["file"],
+        "": {
+            "handlers": ["file"],  # notice how file variable is called in handler which has been defined above
             "level": "DEBUG",
             "propagate": True,
+        },
+    },
+    "handlers": {
+        "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "formatter": "verbose",
+            "filename": BASE_DIR / ".logs" / "DEBUG.log",
         },
     },
 }

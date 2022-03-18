@@ -1,7 +1,11 @@
+from django.contrib import admin
 from django.urls import include, path
-from .views import auth
 
 urlpatterns = [
-    path("login/", auth.handle_login),
-    path("logout/", auth.handle_logout),
+    path("auth/", include("web.auth.urls")),
+    path("", include("web.client.urls")),
+    path("", include("web.contract.urls")),
+    path("", include("web.event.urls")),
+    path("", include("web.sales.urls")),
+    path("", include("web.support.urls")),
 ]
