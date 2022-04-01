@@ -4,9 +4,6 @@ from django.db import models
 class Client(models.Model):
     user = models.OneToOneField("authentification.UserModel", on_delete=models.CASCADE)
 
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
-    email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=20)
     mobile = models.CharField(max_length=20)
     company_name = models.CharField(max_length=250)

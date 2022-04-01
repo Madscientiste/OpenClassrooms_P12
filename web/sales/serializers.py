@@ -4,5 +4,7 @@ from .models import Salesman
 # @/get | @/post | @/put | @/delete
 
 
-class SalesSerializer(serializers.Serializer):
-    pass
+class SalesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Salesman
+        fields = "__all__"

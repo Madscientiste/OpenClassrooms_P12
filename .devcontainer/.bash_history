@@ -127,3 +127,5 @@ source /opt/venv/bin/activate
  /usr/bin/env /opt/venv/bin/python /root/.vscode-server/extensions/ms-python.python-2022.2.1924087327/pythonFiles/lib/python/debugpy/launcher 40193 -- /home/app/manage.py runserver 0.0.0.0:8000 
  cd /home/app ; /usr/bin/env /opt/venv/bin/python /root/.vscode-server/extensions/ms-python.python-2022.2.1924087327/pythonFiles/lib/python/debugpy/launcher 41505 -- /home/app/manage.py runserver 0.0.0.0:8000 
  cd /home/app ; /usr/bin/env /opt/venv/bin/python /root/.vscode-server/extensions/ms-python.python-2022.2.1924087327/pythonFiles/lib/python/debugpy/launcher 42099 -- /home/app/manage.py runserver 0.0.0.0:8000 
+pip freeze > requirements.txt 
+clear

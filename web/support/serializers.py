@@ -4,5 +4,7 @@ from .models import Support
 # @/get | @/post | @/put | @/delete
 
 
-class SupportSerializer(serializers.Serializer):
-    pass
+class SupportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Support
+        fields = "__all__"
