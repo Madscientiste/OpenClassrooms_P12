@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "rest_framework",
     # Apps
     "web.auth.apps.AuthConfig",
+    "web.core",
     "web.client",
     "web.contract",
     "web.event",

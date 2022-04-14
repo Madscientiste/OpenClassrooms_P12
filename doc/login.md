@@ -1,6 +1,8 @@
 # Login
 
-Used to collect a (Access && Refresh) for a registered User.
+* [Main Page](/doc/README.md)
+
+Used to collect a (``Access`` & ``Refresh``) Token for a registered User.
 
 **URL** : `/api/login/`
 

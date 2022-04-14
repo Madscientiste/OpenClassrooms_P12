@@ -4,7 +4,7 @@
 
 Open endpoints require no Authentication.
 
-* [Login](doc/login.md) : `POST /api/login/`
+* [Login](/doc/login.md) : `POST /api/login/`
 
 ## Endpoints that require Authentication
 
@@ -22,9 +22,9 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
 
 Viewing & Manipulating the User
 
-* [Show All Users](doc/users/get.md) : `GET /api/users/`
-* [Create A User](doc/users/post.md) : `POST /api/users/`
+* [Show All Users](/doc/users/get.md) : `GET /api/users/`
+* [Create A User](/doc/users/post.md) : `POST /api/users/`
 <!--  -->
-* [Get a User](doc/users/#id/get.md) : `GET /api/users/:pk/`
-* [Update A User](doc/users/#id/put.md) : `PUT /api/users/:pk/`
-* [Delete A User](doc/users/#id/delete.md) : `DELETE /api/users/:pk/`
+* [Get a User](/doc/users/#id/get.md) : `GET /api/users/:pk/`
+* [Update A User](/doc/users/#id/put.md) : `PUT /api/users/:pk/`
+* [Delete A User](/doc/users/#id/delete.md) : `DELETE /api/users/:pk/`

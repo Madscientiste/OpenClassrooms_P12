@@ -1,13 +1,12 @@
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
-
-from web.support.permissions import SupportPermissions
 
 from .models import Client
 from .serializers import ClientSerializer
+from .permissions import ClientPermissions
 
 
 class ClientViewSet(viewsets.ModelViewSet):
-    permission_classes = [SupportPermissions]
+    permission_classes = [IsAuthenticated, ClientPermissions]
     serializer_class = ClientSerializer
     queryset = Client.objects.all()

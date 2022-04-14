@@ -5,6 +5,8 @@ from .models import Client
 
 
 class ClientSerializer(serializers.ModelSerializer):
+    is_validated = serializers.SerializerMethodField()
+
     class Meta:
         model = Client
         fields = "__all__"
@@ -13,3 +15,6 @@ class ClientSerializer(serializers.ModelSerializer):
             "date_created": {"read_only": True},
             "date_modified": {"read_only": True},
         }
+
+    def get_is_validated(self, obj):
+        return obj.is_validated
