@@ -15,12 +15,6 @@ class Command(BaseCommand):
     help = "Temporary command to create users"
 
     def handle(self, *args, **kwargs):
-        # 10 clients
-        # 4 supports
-        # 4 salesmans
-        # 2 admin
-        # 2 staff
-
         default_password = "default"
 
         for i in range(1, 10):

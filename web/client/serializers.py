@@ -14,6 +14,7 @@ class ClientSerializer(serializers.ModelSerializer):
             "phone": {"required": False},
             "date_created": {"read_only": True},
             "date_modified": {"read_only": True},
+            "user": {"write_only": True},
         }
 
     def get_is_validated(self, obj):

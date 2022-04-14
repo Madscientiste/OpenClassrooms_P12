@@ -4,7 +4,7 @@ from django.urls import include, path
 
 from .views import EventViewSet
 
-# /api/clients/ & /api/clients/<pk>/
+# /api/events/ & /api/events/<pk>/
 router = routers.DefaultRouter()
 router.register(r"events", EventViewSet, basename="events")
 

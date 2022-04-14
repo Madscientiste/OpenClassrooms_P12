@@ -1,11 +1,17 @@
-from rest_framework import permissions
+from EpicEvents import BasePermissions
 
 
-class ContractPermissions(permissions.BasePermission):
+# salesman can read
+# salesman can write ONLY IF he is in relation with the client
+
+
+class ContractPermissions(BasePermissions):
     def has_permission(self, request, view):
-        is_staff = request.user.is_staff or hasattr(request.user, "salesman")
-        methods_are_safe = request.method in permissions.SAFE_METHODS
-        return methods_are_safe or is_staff
+        return self.can_write(request, "salesman") or self.methods_are_safe(request)
 
     def has_object_permission(self, request, view, obj):
-        return request.user.is_staff or hasattr(request.user, "salesman")
+        # can only write if he has a contract with the client
+        if self.can_write(request, "salesman"):
+            return obj.salesmans.filter(pk=request.user.salesman.pk).count() > 0
+
+        return self.methods_are_safe(request)

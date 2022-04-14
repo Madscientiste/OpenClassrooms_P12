@@ -3,7 +3,7 @@ from django.db import models
 
 class Contract(models.Model):
     client = models.ForeignKey("client.Client", on_delete=models.CASCADE)
-    sales_contact = models.ManyToManyField("sales.Salesman")
+    salesmans = models.ManyToManyField("sales.Salesman")
     
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)

@@ -1,6 +1,8 @@
 from rest_framework import serializers, validators
 from .models import Contract
 
+from web.event.models import Event
+
 # @/get | @/post | @/put | @/delete
 
 

@@ -11,10 +11,10 @@ class ContractViewSet(viewsets.ModelViewSet):
     serializer_class = ContractSerializer
 
     def get_queryset(self):
-        """Return all contracts for the current user. All contracts are returned if the user is an admin."""
+        """Return all contracts depending on the user."""
         user = self.request.user
 
-        if user.is_staff or user.is_superuser:
-            return Contract.objects.all()
+        if hasattr(user, "salesman"):
+            return Contract.objects.filter(salesmans=user.salesman)
 
-        return Contract.objects.filter(sales_contact=user.salesman)
+        return Contract.objects.all()
