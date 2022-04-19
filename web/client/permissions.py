@@ -9,12 +9,9 @@ class ClientPermissions(BasePermissions):
         return self.can_write(request, "salesman") or self.methods_are_safe(request)
 
     def has_object_permission(self, request, view, obj):
-        if self.methods_are_safe(request):
-            return True
-
         # salesmand can only write if they have a relation with the client
         if self.can_write(request, "salesman"):
             contract = request.user.salesman.contract_set
             return contract.filter(client=obj).exists()
 
-        return False
+        return self.methods_are_safe(request)

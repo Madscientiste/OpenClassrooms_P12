@@ -1,11 +1,22 @@
-from rest_framework import permissions
+from EpicEvents import BasePermissions
 
 
-class ContractPermissions(permissions.BasePermission):
+class EventPermissions(BasePermissions):
     def has_permission(self, request, view):
-        is_staff = request.user.is_staff or hasattr(request.user, "support")
-        methods_are_safe = request.method in permissions.SAFE_METHODS
-        return methods_are_safe or is_staff
+        is_staff = request.user.is_staff
+        is_sales = self.can_write(request, "salesman")
+        is_support = self.can_write(request, "support")
+        can_access = is_staff or is_sales or is_support
+
+        return can_access or self.methods_are_safe(request)
 
     def has_object_permission(self, request, view, obj):
-        return request.user.is_staff or hasattr(request.user, "support")
+        is_staff = request.user.is_staff
+        is_sales = self.can_write(request, "salesman")
+        is_support = self.can_write(request, "support")
+        can_access = is_staff or is_sales or is_support
+
+        if is_support and not self.methods_are_safe(request):
+            return False
+
+        return can_access or self.methods_are_safe(request)

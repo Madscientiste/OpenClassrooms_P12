@@ -15,3 +15,5 @@ class Client(models.Model):
     @property
     def is_validated(self):
         return Contract.objects.filter(client=self).count() > 0
+
+    
