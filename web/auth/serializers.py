@@ -15,10 +15,10 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ("id", "username", "email", "password", "password2")
         extra_kwargs = {"id": {"read_only": True}}
 
+    # validate when creating, when editing exclude password2
     def validate(self, data):
-        if data["password"] != data["password2"]:
+        if self.instance is None and data["password"] != data["password2"]:
             raise serializers.ValidationError("Passwords do not match")
-
         return data
 
     def create(self, value):

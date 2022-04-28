@@ -7,11 +7,12 @@ from EpicEvents import BasePermissions
 
 class ContractPermissions(BasePermissions):
     def has_permission(self, request, view):
-        return self.can_write(request, "salesman") or self.methods_are_safe(request)
+        can_access = self.is_staff(request) or self.is_salesman(request) or self.is_support(request)
+        return can_access or self.methods_are_safe(request)
 
     def has_object_permission(self, request, view, obj):
-        # can only write if he has a contract with the client
-        if self.can_write(request, "salesman"):
+        if self.is_salesman(request) and not self.methods_are_safe(request):
             return obj.salesmans.filter(pk=request.user.salesman.pk).count() > 0
 
-        return self.methods_are_safe(request)
+        can_access = self.is_staff(request) or self.is_support(request) or self.is_salesman(request)
+        return can_access or self.methods_are_safe(request)
