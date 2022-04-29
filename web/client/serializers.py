@@ -5,10 +5,10 @@ from .models import Client
 
 
 class ClientSerializer(serializers.ModelSerializer):
-    is_validated = serializers.SerializerMethodField()
     first_name = serializers.SerializerMethodField()
     last_name = serializers.SerializerMethodField()
     email = serializers.SerializerMethodField()
+    is_validated = serializers.SerializerMethodField()
 
     class Meta:
         model = Client
@@ -18,6 +18,7 @@ class ClientSerializer(serializers.ModelSerializer):
             "date_created": {"read_only": True},
             "date_modified": {"read_only": True},
             "user": {"write_only": True},
+            "sales_contact": {"read_only": True},
         }
 
     def get_first_name(self, obj):
@@ -31,3 +32,11 @@ class ClientSerializer(serializers.ModelSerializer):
 
     def get_is_validated(self, obj):
         return obj.is_validated
+
+    def create(self, validated_data):
+        user = self.context["request"].user
+
+        if user.salesman:
+            validated_data["sales_contact"] = user.salesman
+
+        return super().create(validated_data)
