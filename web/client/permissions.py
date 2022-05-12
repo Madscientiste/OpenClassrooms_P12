@@ -11,6 +11,6 @@ class ClientPermissions(BasePermissions):
 
     def has_object_permission(self, request, view, obj):
         if self.is_salesman(request) and not self.methods_are_safe(request):
-            return obj.sales_contact == request.user.salesman.id
+            return obj.sales_contact == request.user.salesman
 
         return self.is_staff(request) or self.methods_are_safe(request)

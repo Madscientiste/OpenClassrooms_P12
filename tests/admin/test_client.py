@@ -14,8 +14,8 @@ def test_can_create_client(api_client: APIClient, admin: UserModel):
 
     data = {
         "user": user.id,
-        "company_name": faker.company(),
-        "mobile": faker.phone_number(),
+        "company_name": faker.user_name(),
+        "mobile": faker.msisdn(),
     }
 
     response = api_client.post("/api/clients/", data)
@@ -49,8 +49,8 @@ def test_can_update_client(api_client: APIClient, admin: UserModel):
     client = ClientFactory()
 
     data = {
-        "company_name": faker.name(),
-        "mobile": faker.phone_number(),
+        "company_name": faker.user_name(),
+        "mobile": faker.msisdn(),
     }
 
     response = api_client.patch(f"/api/clients/{client.id}/", data)

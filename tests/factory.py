@@ -69,3 +69,16 @@ class ContractFactory(factory.django.DjangoModelFactory):
             self.salesmans.set(extracted)
         elif create and type(extracted) is tuple:
             self.salesmans.set(SalesmanFactory.create_batch(extracted[0]))
+
+
+class EventFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Event
+
+    client = factory.SubFactory(ClientFactory)
+    contract = factory.SubFactory(ContractFactory)
+    support = factory.SubFactory(SupportFactory)
+
+    attendees = factory.Faker("random_number")
+    event_date = factory.Faker("date_time")
+    notes = factory.Faker("text")

@@ -1,4 +1,4 @@
-from rest_framework import serializers, validators
+from rest_framework import serializers
 from .models import Client
 
 # @/get | @/post | @/put | @/delete
@@ -36,7 +36,7 @@ class ClientSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = self.context["request"].user
 
-        if user.salesman:
+        if hasattr(user, "salesman"):
             validated_data["sales_contact"] = user.salesman
 
         return super().create(validated_data)

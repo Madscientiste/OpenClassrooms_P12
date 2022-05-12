@@ -11,3 +11,5 @@ def salesman(api_client: APIClient):
     sales = SalesmanFactory()
     api_client.force_authenticate(user=sales.user)
     return sales
+
+

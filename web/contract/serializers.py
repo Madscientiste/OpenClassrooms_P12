@@ -13,4 +13,13 @@ class ContractSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "date_created": {"read_only": True},
             "date_modified": {"read_only": True},
+            "salesmans": {"read_only": True},
         }
+
+    def create(self, validated_data):
+        user = self.context["request"].user
+
+        if hasattr(user, "salesman"):
+            validated_data["salesmans"] = [user.salesman]
+
+        return super().create(validated_data)
