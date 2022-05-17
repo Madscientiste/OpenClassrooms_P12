@@ -129,7 +129,7 @@ LOGGING = {
     },
     "loggers": {
         "": {
-            "handlers": ["file"],  # notice how file variable is called in handler which has been defined above
+            "handlers": ["file"], 
             "level": "DEBUG",
             "propagate": True,
         },
