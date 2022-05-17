@@ -1,7 +1,5 @@
-<!-- https://user.oc-static.com/upload/2020/09/22/16007804386673_P10.png -->
-
 <p align="center">
-    <img height="128" src="./OCRP7/static/LITReviews.svg">
+    <img height="128" src="https://user.oc-static.com/upload/2020/09/22/16007804386673_P10.png">
 </p>
 
 > NOTE : `Python 3.9.9`, `Windows 11` & `Docker` was used while working on this project.
