@@ -67,7 +67,36 @@ Then navigate to : http://127.0.0.1:8000/
 
 > NOTE : if this isn't what you are seeing, and you are unable to access the website, then its probably because there is a typo somewhere or didn't follow the steps correctly ...
 
+## Tests
+
+To make sure everythings works fine, you should run the tests using pytest:
+
+```
+pytest
+```
+
+
+Make sure you have **43 passed** tests.
+
+
 ## Available Endpoints
 
-There is few account available for testing, few posts has been already added for showcase
+[[Auth](docs%5CAuth.md), Client, Support, Sales, Contract, Users]
+
+## Errors
+
+Errors you will encounter when using these enpoints
+
+**Response 400** when the given data is wrong/missing
+```cs
+"[field_name]": string[]
+"[field_name]": string[]
+"[field_name]": string[]
+```
+
+**Response 401** general info, bad creds/not authoized to access, etc
+```cs
+"detail": string
+"code": string
+```
 
