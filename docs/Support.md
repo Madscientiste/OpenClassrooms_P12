@@ -88,6 +88,8 @@ Empty
 
 ### Success
 
-**Response 200**
+**Response 201**
 
-Returns a [support](#Support-Model)
+```cs
+Empty
+```
