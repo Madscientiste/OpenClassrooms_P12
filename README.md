@@ -42,7 +42,19 @@ docker-compose up -d
 
 You need to **install** ``PSQL server`` if you don't have **docker** 
 
+> ### & be sure to check the .[env](.env) file and update it accordingly.
+
 ## Running the Project
+
+before doing anything we will need to run the migrations 
+
+> **be sure to have a valid DB connection first**
+
+Running the migrations:
+
+```
+python manage.py migrate
+```
 
 Running django :
 
@@ -50,7 +62,7 @@ Running django :
 python ./manage.py runserver
 ```
 
-you should see something like this :
+When done, you should see something like this :
 
 ```
 Watching for file changes with StatReloader
@@ -63,9 +75,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
 
-Then navigate to : http://127.0.0.1:8000/
-
-> NOTE : if this isn't what you are seeing, and you are unable to access the website, then its probably because there is a typo somewhere or didn't follow the steps correctly ...
+> NOTE : if this isn't what you are seeing, or you are unable to access the website/API, then its probably because there is a typo somewhere or didn't follow the steps correctly ...
 
 ## Tests
 
@@ -75,9 +85,7 @@ To make sure everythings works fine, you should run the tests using pytest:
 pytest
 ```
 
-
-Make sure you have **43 passed** tests.
-
+You should have **43 passed** tests.
 
 ## API Documentation
 
