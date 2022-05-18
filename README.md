@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 ## Running the Database
 
-Since i'm using `Docker` with `docker-compose`, i can just do this:
+Since we are using `Docker` with `docker-compose`, we can just do this:
 
 ```
 docker-compose up -d
