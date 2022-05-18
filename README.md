@@ -42,7 +42,7 @@ docker-compose up -d
 
 You need to **install** ``PSQL server`` if you don't have **docker** 
 
-> ### & be sure to check the .[env](.env) file and update it accordingly.
+> ### & be sure to check the .[env](./.env) file and update it accordingly.
 
 ## Running the Project
 
@@ -64,7 +64,7 @@ python ./manage.py runserver
 
 When done, you should see something like this :
 
-```
+```ru
 Watching for file changes with StatReloader
 Performing system checks...
 
