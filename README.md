@@ -64,7 +64,7 @@ python ./manage.py runserver
 
 When done, you should see something like this :
 
-```ru
+```
 Watching for file changes with StatReloader
 Performing system checks...
 
