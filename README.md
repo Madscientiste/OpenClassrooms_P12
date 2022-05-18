@@ -44,6 +44,10 @@ You need to **install** ``PSQL server`` if you don't have **docker**
 
 > ### & be sure to check the .[env](./.env.example) file and update it accordingly.
 
+### Database Diagram
+
+![](.github%5CERD%20Diagram.png)
+
 ## Running the Project
 
 before doing anything we will need to run the migrations 
