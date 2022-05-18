@@ -79,18 +79,14 @@ pytest
 Make sure you have **43 passed** tests.
 
 
-## Available Endpoints
+## API Documentation
 
-[[Auth](docs%5CAuth.md), [Client](docs%5CClient.md), Support, Sales, Contract, Users]
+### Errors
 
-## Errors
-
-Errors you will encounter when using these enpoints
+Errors you will encounter when using the endpoints below
 
 **Response 400** when the given data is wrong/missing
 ```cs
-"[field_name]": string[]
-"[field_name]": string[]
 "[field_name]": string[]
 ```
 
@@ -100,3 +96,11 @@ Errors you will encounter when using these enpoints
 "code": string
 ```
 
+### Available endpoints
+
+- [Auth](docs%5CAuth.md)
+- [Client](docs%5CClient.md)
+- [Support](docs%5CSupport.md)
+- [Sales](docs%5CSales.md)
+- [Contract](docs%5CContract.md)
+- [Users](docs%5CUsers.md)
