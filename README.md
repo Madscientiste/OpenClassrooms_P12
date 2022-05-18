@@ -42,7 +42,7 @@ docker-compose up -d
 
 You need to **install** ``PSQL server`` if you don't have **docker** 
 
-> ### & be sure to check the .[env](./.env) file and update it accordingly.
+> ### & be sure to check the .[env](./.env.example) file and update it accordingly.
 
 ## Running the Project
 
