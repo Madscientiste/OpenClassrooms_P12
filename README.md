@@ -106,9 +106,9 @@ Errors you will encounter when using the endpoints below
 
 ### Available endpoints
 
-- [Auth](docs%5CAuth.md)
-- [Client](docs%5CClient.md)
-- [Support](docs%5CSupport.md)
-- [Sales](docs%5CSales.md)
-- [Contract](docs%5CContract.md)
-- [Users](docs%5CUsers.md)
+- [Auth](./docs/Auth.md)
+- [Client](./docs/Client.md)
+- [Support](./docs/Support.md)
+- [Sales](./docs/Sales.md)
+- [Contract](./docs/Contract.md)
+- [Users](./docs/Users.md)
