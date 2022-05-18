@@ -103,6 +103,8 @@ Empty
 
 ### Success
 
-**Response 200**
+**Response 201**
 
-Returns a [client](#Client-Model)
+```cs
+Empty
+```
