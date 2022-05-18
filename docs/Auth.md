@@ -1,10 +1,8 @@
 # Auth Enpoints
 
-## /auth/token
+## ![](https://img.shields.io/badge/-POST%20-orange) /auth/token
 
 Login a user with given credentials.
-
-- **Method** : POST
 
 **Request Body**
 
@@ -15,18 +13,16 @@ Login a user with given credentials.
 
 ### Success
 
-**Response**
+**Response 200**
 
 ```cs
 "refresh": string
 "access": string
 ```
 
-## /auth/refresh
+## ![](https://img.shields.io/badge/-POST%20-orange) /auth/refresh
 
 Refresh a user's token.
-
-- **Method** : POST
 
 **Request Body**
 

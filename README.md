@@ -81,7 +81,7 @@ Make sure you have **43 passed** tests.
 
 ## Available Endpoints
 
-[[Auth](docs%5CAuth.md), Client, Support, Sales, Contract, Users]
+[[Auth](docs%5CAuth.md), [Client](docs%5CClient.md), Support, Sales, Contract, Users]
 
 ## Errors
 
