@@ -13,6 +13,6 @@ class ClientViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
 
     ordering_fields = ["date_created", "date_updated"]
-    search_fields = ["user__email", "user__first_name", "user__last_name", "phone", "mobile", "company_name"]
+    search_fields = ["user__email", "user__first_name"]
 
     queryset = Client.objects.all()

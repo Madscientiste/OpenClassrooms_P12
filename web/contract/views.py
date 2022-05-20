@@ -13,6 +13,6 @@ class ContractViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
 
     ordering_fields = ["date_created", "date_updated", "amount", "payment_due"]
-    search_fields = ["status", "date_created", "date_updated", "amount", "payment_due"]
+    search_fields = ["client__user__first_name", "client__user__email", "date_created", "amount"]
 
     queryset = Contract.objects.all()
