@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserModel
-        fields = ("id", "username", "email", "password", "password2")
+        fields = ("id", "username", "first_name", "last_name", "email", "password", "password2")
         extra_kwargs = {"id": {"read_only": True}}
 
     # validate when creating, when editing exclude password2
