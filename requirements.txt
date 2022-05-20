@@ -6,6 +6,7 @@ click==8.0.4
 colorama==0.4.4
 Django==4.0.3
 django-environ==0.8.1
+django-filter==21.1
 djangorestframework==3.13.1
 djangorestframework-simplejwt==5.1.0
 factory-boy==3.2.1

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Modules
     "rest_framework",
+    "django_filters",
     # Apps
     "web.auth.apps.AuthConfig",
     "web.core",
