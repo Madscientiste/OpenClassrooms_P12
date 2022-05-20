@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from django.contrib.auth.models import User
+from web.auth.models import UserModel
 
 from tests.factory import ClientFactory, SalesmanFactory, SupportFactory, EventFactory, ContractFactory
 
@@ -8,7 +8,7 @@ class Command(BaseCommand):
     help = "Temporary command to create users"
 
     def handle(self, *args, **kwargs):
-        User.objects.create_superuser(username="admin", password="default")
+        UserModel.objects.create_superuser(username="admin", password="default")
 
         # Related
         salesman = SalesmanFactory(user__username="salesman")
