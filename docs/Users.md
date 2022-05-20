@@ -1,4 +1,4 @@
-# Users Enpoint
+# User Enpoint
 
 ## User Model
 
@@ -28,7 +28,7 @@ Empty
 
 **Response 200**
 
-Returns an array of [user](#Users-Model)
+Returns an array of [user](#User-Model)
 
 
 ## ![](https://img.shields.io/badge/-GET%20-green) /users/1/
@@ -45,7 +45,7 @@ Empty
 
 **Response 200**
 
-Returns a [user](#Users-Model)
+Returns a [user](#User-Model)
 
 ## ![](https://img.shields.io/badge/-POST%20-orange) /users/1/
 
@@ -68,7 +68,7 @@ Get one user.
 
 **Response 200**
 
-Returns a [user](#Users-Model)
+Returns a [user](#User-Model)
 
 ## ![](https://img.shields.io/badge/-PATCH%20-blueviolet) /users/1/
 
@@ -90,7 +90,7 @@ Update one user.
 
 **Response 200**
 
-Returns a [user](#Users-Model)
+Returns a [user](#User-Model)
 
 ## ![](https://img.shields.io/badge/-DELETE%20-critical) /users/1
 

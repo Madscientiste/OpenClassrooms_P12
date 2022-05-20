@@ -46,7 +46,7 @@ You need to **install** ``PSQL server`` if you don't have **docker**
 
 ### Database Diagram
 
-![](.github%5CERD%20Diagram.png)
+![](./.github%5CERD%20Diagram.png)
 
 ## Running the Project
 
