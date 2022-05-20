@@ -67,11 +67,8 @@ Get one contract.
 ```
 
 > note: In order to create a contract, you will need a valid:
-> - **User ID** 
 > - **Client ID**
 > - **Salesman ID** 
-
-
 
 ### Success
 

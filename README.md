@@ -128,4 +128,5 @@ Errors you will encounter when using the endpoints below
 - [Auth](./docs/Auth.md)
 - [Client](./docs/Client.md)
 - [Contract](./docs/Contracts.md)
+- [Events](./docs/Events.md)
 - [Users](./docs/Users.md)
