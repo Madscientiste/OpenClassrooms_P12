@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     # Modules
     "rest_framework",
     "django_filters",
-    "django_property_filter",
     # Apps
     "web.auth.apps.AuthConfig",
     "web.core",
