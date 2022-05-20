@@ -13,4 +13,4 @@ class EventViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
 
     ordering_fields = ["date_created", "date_updated", "attendees", "event_date"]
-    search_fields = ["client__company_name"]
+    search_fields = ["event_date", "client__user__email", "client__user__first_name"]
