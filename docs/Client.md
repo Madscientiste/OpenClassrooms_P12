@@ -16,6 +16,12 @@
 "date_updated": date,
 ```
 
+## Filters
+
+This enpoint can be filtered using "search" and "ordering"
+
+> **eg**: GET /example/?search=value&ordering=field
+
 ## ![](https://img.shields.io/badge/-GET%20-green) /clients/
 
 Get all clients.

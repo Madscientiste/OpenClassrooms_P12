@@ -127,7 +127,5 @@ Errors you will encounter when using the endpoints below
 
 - [Auth](./docs/Auth.md)
 - [Client](./docs/Client.md)
-- [Support](./docs/Support.md)
-- [Sales](./docs/Sales.md)
-- [Contract](./docs/Contract.md)
+- [Contract](./docs/Contracts.md)
 - [Users](./docs/Users.md)
