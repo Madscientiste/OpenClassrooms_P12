@@ -54,13 +54,18 @@ before doing anything we will need to run the migrations
 
 > **be sure to have a valid DB connection first**
 
-Running the migrations:
+1. Running the migrations:
 
 ```
 python manage.py migrate
 ```
 
-Running django :
+2. Generate mockdata:
+```
+python manage.py gen_mock_data
+```
+
+3. Run django :
 
 ```
 python ./manage.py runserver
@@ -90,6 +95,16 @@ pytest
 ```
 
 You should have **43 passed** tests.
+
+## Accounts
+
+The command "gen_mock_data" will generate needed data for this project to work.
+
+- Admin Credentials:
+  - username : **admin**
+  - password : **default**
+
+> NOTE : All generated accounts credentials has the same password.
 
 ## API Documentation
 
