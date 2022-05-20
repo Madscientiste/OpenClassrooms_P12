@@ -46,7 +46,7 @@ You need to **install** ``PSQL server`` if you don't have **docker**
 
 ### Database Diagram
 
-![](./.github/ERD-Diagram.png)
+<img src="./.github/ERD-Diagram.png"/>
 
 ## Running the Project
 
