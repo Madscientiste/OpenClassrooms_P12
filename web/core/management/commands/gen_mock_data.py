@@ -1,26 +1,46 @@
 from django.core.management.base import BaseCommand
-from web.auth.models import UserModel
 
-from tests.factory import ClientFactory, SalesmanFactory, SupportFactory, EventFactory, ContractFactory
+# "users"
+from web.auth.models import UserModel
+from web.client.models import Client
+from web.support.models import Support
+from web.sales.models import Salesman
+
+# objects
+from web.contract.models import Contract
+from web.event.models import Event
 
 
 class Command(BaseCommand):
     help = "Temporary command to create users"
 
     def handle(self, *args, **kwargs):
-        UserModel.objects.create_superuser(username="admin", password="default")
+        default_password = "default"
 
-        # Related
-        salesman = SalesmanFactory(user__username="salesman")
-        support = SupportFactory(user__username="support")
+        for i in range(1, 10):
+            user = UserModel.objects.create_user(username=f"client{i}", password=default_password)
+            user.save()
 
-        client = ClientFactory(sales_contact=salesman)
-        contract = ContractFactory(client=client, salesmans=[salesman])
-        EventFactory(client=client, contract=contract, support=support)
+            client = Client.objects.create(user=user)
+            client.save()
 
-        # Unrelated
-        ClientFactory.create_batch(3)
-        ContractFactory.create_batch(3)
-        EventFactory.create_batch(3)
+        for i in range(1, 4):
+            user = UserModel.objects.create_user(username=f"support{i}", password=default_password)
+            user.save()
+
+            support = Support.objects.create(user=user)
+            support.save()
+
+        for i in range(1, 4):
+            user = UserModel.objects.create_user(username=f"salesman{i}", password=default_password)
+            user.save()
+
+            salesman = Salesman.objects.create(user=user)
+            salesman.save()
+
+        for i in range(1, 2):
+            user = UserModel.objects.create_user(username=f"admin{i}", password=default_password, is_staff=True)
+            user.is_superuser = True
+            user.save()
 
         print("Users created")
