@@ -1,46 +1,19 @@
 from django.core.management.base import BaseCommand
 
+from tests.factory import UserFactory, ClientFactory, SalesmanFactory, SupportFactory, EventFactory, ContractFactory
+
 # "users"
 from web.auth.models import UserModel
-from web.client.models import Client
-from web.support.models import Support
-from web.sales.models import Salesman
-
-# objects
-from web.contract.models import Contract
-from web.event.models import Event
 
 
 class Command(BaseCommand):
     help = "Temporary command to create users"
 
     def handle(self, *args, **kwargs):
-        default_password = "default"
-
-        for i in range(1, 10):
-            user = UserModel.objects.create_user(username=f"client{i}", password=default_password)
-            user.save()
-
-            client = Client.objects.create(user=user)
-            client.save()
-
-        for i in range(1, 4):
-            user = UserModel.objects.create_user(username=f"support{i}", password=default_password)
-            user.save()
-
-            support = Support.objects.create(user=user)
-            support.save()
-
-        for i in range(1, 4):
-            user = UserModel.objects.create_user(username=f"salesman{i}", password=default_password)
-            user.save()
-
-            salesman = Salesman.objects.create(user=user)
-            salesman.save()
-
-        for i in range(1, 2):
-            user = UserModel.objects.create_user(username=f"admin{i}", password=default_password, is_staff=True)
-            user.is_superuser = True
-            user.save()
+        SalesmanFactory.create_batch(3)
+        ClientFactory.create_batch(3)
+        SupportFactory.create_batch(3)
+        EventFactory.create_batch(3)
+        ContractFactory.create_batch(3)
 
         print("Users created")
