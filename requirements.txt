@@ -4,7 +4,7 @@ attrs==21.4.0
 black==22.1.0
 click==8.0.4
 colorama==0.4.4
-Django==4.0.3
+Django==4.0.4
 django-environ==0.8.1
 django-filter==21.1
 djangorestframework==3.13.1
