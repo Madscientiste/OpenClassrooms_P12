@@ -13,7 +13,6 @@ class Client(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
- 
     @property
     def is_validated(self):
         return Contract.objects.filter(client=self).count() > 0

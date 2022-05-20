@@ -18,7 +18,10 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ]
+    ],
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+    ],
 }
 
 # Application definition
@@ -33,6 +36,7 @@ INSTALLED_APPS = [
     # Modules
     "rest_framework",
     "django_filters",
+    "django_property_filter",
     # Apps
     "web.auth.apps.AuthConfig",
     "web.core",
@@ -130,7 +134,7 @@ LOGGING = {
     },
     "loggers": {
         "": {
-            "handlers": ["file"], 
+            "handlers": ["file"],
             "level": "DEBUG",
             "propagate": True,
         },

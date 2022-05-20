@@ -14,11 +14,11 @@ class ClientSerializer(serializers.ModelSerializer):
         model = Client
         fields = "__all__"
         extra_kwargs = {
+            "user": {"write_only": True},
+            "sales_contact": {"read_only": True},
             "phone": {"required": False},
             "date_created": {"read_only": True},
             "date_modified": {"read_only": True},
-            "user": {"write_only": True},
-            "sales_contact": {"read_only": True},
         }
 
     def get_first_name(self, obj):
